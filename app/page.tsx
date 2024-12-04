@@ -9,6 +9,7 @@ const HomePage = () => {
   return (
     <div className="flex flex-col items-center w-full min-h-screen lg:gap-y-10 p-20">
       {RenderForm()}
+      {RenderMessage()}
     </div>
   );
 
