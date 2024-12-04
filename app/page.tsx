@@ -1,7 +1,7 @@
 "use client";
 
 import { useChat } from "ai/react";
-import { Send } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 
 const HomePage = () => {
   const { messages, input, handleInputChange, handleSubmit, isLoading, stop } =
@@ -14,10 +14,30 @@ const HomePage = () => {
 
   function RenderForm() {
     return (
-      <form>
-        <input type="text" className="border-2 border-black" />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit(e, {
+            data: {
+              prompt: input,
+            },
+          });
+        }}
+      >
+        <input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder={isLoading ? "Generating..." : "Ask me something..."}
+          disabled={isLoading}
+          className="border-2 border-black"
+        />
         <button type="submit">
-          <Send />
+          {isLoading ? (
+            <Loader2 onClick={stop} className="animate-spin" />
+          ) : (
+            <Send />
+          )}
         </button>
       </form>
     );
