@@ -1,8 +1,13 @@
+import { SignedOut } from "@clerk/nextjs";
+import SignedOutPage from "./_components/SignedOutPage";
+
 const HomePage = () => {
   return (
-    <div className="flex justify-center items-center flex-col w-full min-h-screen gap-y-10">
-      HomePage
-    </div>
+    <>
+      <SignedOut>
+        <SignedOutPage />
+      </SignedOut>
+    </>
   );
 };
 

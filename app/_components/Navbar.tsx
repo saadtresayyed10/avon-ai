@@ -1,6 +1,7 @@
 "use client";
 
-import { Moon, Search } from "lucide-react";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { User, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -9,10 +10,6 @@ const hyperlinks = [
   {
     name: "About",
     linky: "/about",
-  },
-  {
-    name: "Agency",
-    linky: "https://groven-portfolio.vercel.app/",
   },
   {
     name: "Model",
@@ -38,10 +35,10 @@ const Navbar = () => {
   return (
     <div className="lg:flex hidden justify-between items-center w-full px-20 py-4 bg-black text-pink-500">
       <div className="flex items-center gap-x-1">
-        <Image src="/images/shrimp.png" alt="Logo" width={32} height={32} />
         <Link href="/">
           <h1 className="text-2xl font-semibold uppercase">Avon</h1>
         </Link>
+        <Image src="/images/shrimp.png" alt="Logo" width={32} height={32} />
       </div>
       <ul className="flex justify-center items-center gap-x-8 text-sm capitalize">
         {hyperlinks
@@ -73,9 +70,16 @@ const Navbar = () => {
         <button onClick={handleInputButton}>
           <Search className="w-4 h-4 stroke-[1.5]" />
         </button>
-        <button>
-          <Moon className="w-4 h-4 stroke-[1.5]" />
-        </button>
+        <SignedOut>
+          <button>
+            <SignInButton mode="modal">
+              <User className="w-4 h-4 stroke-[1.5]" />
+            </SignInButton>
+          </button>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );
