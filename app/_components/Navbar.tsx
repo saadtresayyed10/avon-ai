@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="lg:flex hidden justify-between items-center w-full px-20 py-4 bg-white dark:bg-black dark:text-white text-black">
+    <div className="lg:flex hidden justify-between items-center w-full px-20 py-4 bg-black text-pink-500">
       <div className="flex items-center gap-x-1">
         <Image src="/images/shrimp.png" alt="Logo" width={32} height={32} />
         <Link href="/">
