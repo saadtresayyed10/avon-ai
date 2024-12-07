@@ -1,8 +1,10 @@
+"use client";
+
 import * as React from "react";
 import { HeroSection } from "./HeroSection";
 import { CallToAction } from "./CallToAction";
 
-export const AvonLanding: React.FC = () => {
+export const MainHero: React.FC = () => {
   const handleLogin = () => {
     // Handle login logic here
   };

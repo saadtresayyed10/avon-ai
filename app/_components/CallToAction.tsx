@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { CallToActionProps } from "../types";
 import { Button } from "./Button";
