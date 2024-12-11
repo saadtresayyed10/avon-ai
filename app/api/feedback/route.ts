@@ -17,6 +17,7 @@ export async function POST(request: Request) {
 
   const result = await prisma.feedback.create({
     data: {
+      id: user.id as string,
       fullname: user.fullName as string,
       email: user.emailAddresses[0]?.emailAddress as string,
       message,

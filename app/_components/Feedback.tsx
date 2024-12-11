@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Feedback = () => {
   const user = useUser();
-  const [message, setMessage] = useState("Hey");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const Feedback = () => {
     if (response.ok) {
       alert("Feedback added");
     } else {
-      alert("Feedback not sent");
+      alert(`${user.user?.fullName}, you have already sent a feedback.`);
     }
   };
 
