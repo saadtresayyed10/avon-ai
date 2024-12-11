@@ -42,7 +42,7 @@ const Feedback = () => {
           value={user.user?.fullName as string}
           disabled
           readOnly
-          className="px-8 py-2"
+          className="pr-8 pl-2 py-2 rounded-lg shadow-md placeholder:text-black bg-cyan-100/25 text-black"
         />
         <input
           type="text"
@@ -50,17 +50,24 @@ const Feedback = () => {
           value={user.user?.emailAddresses[0].emailAddress as string}
           disabled
           readOnly
-          className="pr-8 pl-2 py-2"
+          className="pr-8 pl-2 py-2 rounded-lg shadow-md placeholder:text-black bg-cyan-100/25 text-black"
         />
         <textarea
           cols={25}
           rows={6}
-          className="border"
+          className="pr-8 pl-2 py-2 rounded-lg shadow-md placeholder:text-black text-black bg-cyan-100/25 border-2 border-black ring-1 ring-black"
           placeholder="You message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
-        <button type="submit">Submit</button>
+        <div className="flex justify-center items-center w-full">
+          <button
+            type="submit"
+            className="bg-black text-cyan-500 font-semibold uppercase px-6 py-2 rounded-lg"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
