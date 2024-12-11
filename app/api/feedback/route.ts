@@ -18,4 +18,7 @@ export async function POST(request: Request) {
       message,
     },
   });
+  console.log("Feedback created", result);
+
+  return new Response(JSON.stringify(result), { status: 201 });
 }
