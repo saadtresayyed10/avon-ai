@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Feedback {
-  id       Int    @id @default(autoincrement())
+  id       String @id
   fullname String @db.VarChar(20)
   email    String @db.VarChar(50)
   message  String @db.VarChar(255)
