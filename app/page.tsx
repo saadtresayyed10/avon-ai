@@ -1,15 +1,16 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
 import SignedOutPage from "./_components/SignedOutPage";
-import { currentUser } from "@clerk/nextjs/server";
+import Feedback from "./_components/Feedback";
 
-const HomePage = async () => {
-  const user = await currentUser();
+const HomePage = () => {
   return (
     <>
       <SignedOut>
         <SignedOutPage />
       </SignedOut>
-      <SignedIn>Login 200</SignedIn>
+      <SignedIn>
+        <Feedback />
+      </SignedIn>
     </>
   );
 };
