@@ -46,9 +46,6 @@ export async function POST(request: Request) {
 }
 
 export async function GET(request: Request) {
-  const checkingFetch = {
-    message: "O Salma!",
-  };
-
-  return Response.json(checkingFetch);
+  const feedbacks = await prisma.feedback.findMany();
+  return Response.json(feedbacks);
 }
