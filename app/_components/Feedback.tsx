@@ -30,10 +30,10 @@ const Feedback = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full">
+    <div className="flex justify-center items-center w-full bg-cyan-500">
       <form
         onSubmit={handleSubmit}
-        className="flex justify-center items-start flex-col lg:gap-y-6 lg:p-8"
+        className="flex justify-start items-start flex-col lg:gap-y-6 lg:p-8"
       >
         <input type="text" value={user.user?.id as string} hidden />
         <input
@@ -42,6 +42,7 @@ const Feedback = () => {
           value={user.user?.fullName as string}
           disabled
           readOnly
+          className="px-8 py-2"
         />
         <input
           type="text"
@@ -49,6 +50,7 @@ const Feedback = () => {
           value={user.user?.emailAddresses[0].emailAddress as string}
           disabled
           readOnly
+          className="pr-8 pl-2 py-2"
         />
         <textarea
           cols={25}
