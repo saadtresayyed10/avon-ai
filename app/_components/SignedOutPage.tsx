@@ -15,7 +15,7 @@ const SignedOutPage = () => {
           interactions.
         </p>
         <SignInButton mode="modal">
-          <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2">
+          <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
             Chat with Avon
             <span>
               <ArrowUpRightIcon className="w-4 h-4" />
