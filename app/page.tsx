@@ -1,6 +1,6 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
 import SignedOutPage from "./_components/SignedOutPage";
-import Feedback from "./_components/Feedback";
+import SignedInPage from "./_components/SignedInPage";
 
 const HomePage = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage = () => {
         <SignedOutPage />
       </SignedOut>
       <SignedIn>
-        <Feedback />
+        <SignedInPage />
       </SignedIn>
     </>
   );
