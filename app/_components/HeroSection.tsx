@@ -1,5 +1,6 @@
-import { SignInButton } from "@clerk/nextjs";
-import { ArrowUpRightIcon } from "lucide-react";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { ArrowRight, ArrowUpRightIcon } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -12,14 +13,26 @@ const HeroSection = () => {
         problem-solving, support learning, and provide insightful, intelligent
         interactions.
       </p>
-      <SignInButton mode="modal">
-        <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
-          Chat with Avon
-          <span>
-            <ArrowUpRightIcon className="w-4 h-4" />
-          </span>
-        </button>
-      </SignInButton>
+      <SignedOut>
+        <SignInButton mode="modal">
+          <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
+            Try Avon
+            <span>
+              <ArrowUpRightIcon className="w-4 h-4" />
+            </span>
+          </button>
+        </SignInButton>
+      </SignedOut>
+      <SignedIn>
+        <Link href="/avon">
+          <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
+            Chat with Avon
+            <span>
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          </button>
+        </Link>
+      </SignedIn>
     </div>
   );
 };
