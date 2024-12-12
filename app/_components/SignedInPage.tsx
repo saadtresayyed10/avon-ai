@@ -1,4 +1,4 @@
-const SignedOutPage = () => {
+const SignedInPage = () => {
   return (
     <div className="flex justify-center items-center w-full min-h-screen bg-white text-black">
       I am Signed Out
@@ -6,4 +6,4 @@ const SignedOutPage = () => {
   );
 };
 
-export default SignedOutPage;
+export default SignedInPage;
