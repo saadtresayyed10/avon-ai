@@ -35,7 +35,10 @@ const FeedbackShowcase = ({ className, ...props }: CardProps) => {
   }, []);
 
   return (
-    <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 p-10 lg:gap-6">
+    <div
+      id="thoughts"
+      className="grid lg:grid-cols-3 grid-cols-1 gap-4 p-10 lg:gap-6"
+    >
       {feedback.map((fdb) => (
         <Card key={fdb.id} className={cn("w-[380px]", className)} {...props}>
           <CardHeader>

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="flex justify-center items-center flex-col gap-y-5">
+    <div className="flex justify-center items-center flex-col gap-y-5 mt-10">
       <h1 className="lg:text-6xl font-bold uppercase tracking-wide text-center">
         Your smart companion for creativity, knowledge, and problem-solving.
       </h1>
