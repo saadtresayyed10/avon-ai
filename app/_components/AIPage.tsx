@@ -1,22 +1,29 @@
 "use client";
 
 import { useChat } from "ai/react";
-import { Loader2, Send } from "lucide-react";
+import { Loader2, Send, Trash } from "lucide-react";
 import Markdown from "./Markdown";
+import { Input } from "@/components/ui/input";
 
 const AIPage = () => {
   const { messages, input, handleInputChange, handleSubmit, isLoading, stop } =
     useChat({ api: "api/genai" });
+
+  const resetPage = () => {
+    window.location.reload();
+  };
+
   return (
-    <div className="flex flex-col items-center w-full min-h-screen lg:gap-y-10 p-20">
-      {RenderForm()}
+    <div className="flex flex-col items-center w-full lg:gap-y-10 p-20">
       {RenderMessage()}
+      {RenderForm()}
     </div>
   );
 
   function RenderForm() {
     return (
       <form
+        className="bottom-6 absolute flex justify-center items-center gap-x-4 w-full border px-6 py-0.5 shadow-md rounded-lg lg:w-[90%]"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit(e, {
@@ -26,21 +33,29 @@ const AIPage = () => {
           });
         }}
       >
-        <input
+        <Input
           type="text"
           value={input}
           onChange={handleInputChange}
           placeholder={isLoading ? "Generating..." : "Ask me something..."}
           disabled={isLoading}
-          className="border-2 border-black"
+          className="text-left border-none focus:border-none focus:outline-none focus:ring-0 focus:border-transparent"
         />
-        <button type="submit">
-          {isLoading ? (
-            <Loader2 onClick={stop} className="animate-spin" />
-          ) : (
-            <Send />
-          )}
-        </button>
+        <div className="flex items-center gap-x-2">
+          <button type="submit">
+            {isLoading ? (
+              <Loader2
+                onClick={stop}
+                className="animate-spin w-6 h-6 stroke-[1]"
+              />
+            ) : (
+              <Send className="w-6 h-6 stroke-[1]" />
+            )}
+          </button>
+          <button onClick={resetPage}>
+            <Trash className="w-6 h-6 stroke-[1]" />
+          </button>
+        </div>
       </form>
     );
   }
@@ -51,7 +66,7 @@ const AIPage = () => {
           <div
             key={idx}
             className={`p-4 shadow-md rounded-md ml-10 relative ${
-              m.role === "user" ? "bg-blue-400" : ""
+              m.role === "user" ? "bg-blue-400" : "bg-purple-400"
             }`}
           >
             <Markdown text={m.content} />
