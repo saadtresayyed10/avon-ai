@@ -3,6 +3,7 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useUser } from "@clerk/nextjs";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 const Feedback = () => {
@@ -32,7 +33,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className="flex flex-col  justify-center items-center w-full bg-white text-black">
+    <div className="flex flex-col justify-center items-center w-full bg-white text-black min-h-screen gap-y-10">
       <h1 className="font-bold mt-10 text-6xl text-center uppercase tracking-wide">
         Share your thoughts
       </h1>
@@ -68,11 +69,11 @@ const Feedback = () => {
           onChange={(e) => setMessage(e.target.value)}
         ></Textarea>
         <div className="flex justify-center items-center w-full">
-          <button
-            type="submit"
-            className="bg-black text-cyan-500 font-semibold uppercase px-6 py-2 rounded-lg"
-          >
+          <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
             Submit
+            <span>
+              <ArrowRight className="w-4 h-4" />
+            </span>
           </button>
         </div>
       </form>
