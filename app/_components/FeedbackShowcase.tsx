@@ -39,7 +39,7 @@ const FeedbackShowcase = ({ className, ...props }: CardProps) => {
       <motion.h1
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 2.0, ease: "easeOut", delay: 2.0 }}
+        transition={{ duration: 1.2, ease: "easeOut", delay: 1.2 }}
         className="lg:text-6xl text-4xl font-bold uppercase tracking-wide text-center"
       >
         Feedbacks
