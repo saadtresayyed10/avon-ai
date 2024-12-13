@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
+import Navbar, { NavbarPhone } from "./_components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -37,6 +37,7 @@ export default function RootLayout({
         >
           <header className="sticky top-0 z-50">
             <Navbar />
+            <NavbarPhone />
           </header>
           <main>{children}</main>
           <Toaster />

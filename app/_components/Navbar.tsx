@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { User2 } from "lucide-react";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 const hyperlinks = [
   {
@@ -56,6 +57,20 @@ const Navbar = () => {
           <UserButton userProfileMode="modal" />
         </Button>
       </SignedIn>
+    </div>
+  );
+};
+
+export const NavbarPhone = () => {
+  return (
+    <div className="flex justify-between items-center px-10 py-4 lg:hidden w-full bg-white text-black">
+      <Link href="/">
+        <h1 className="font-bold uppercase lg:text-4xl text-3xl">Avon</h1>
+      </Link>
+      <div className="flex items-center gap-x-3">
+        <UserButton />
+        <MobileMenu />
+      </div>
     </div>
   );
 };
