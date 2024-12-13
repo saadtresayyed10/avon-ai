@@ -15,14 +15,14 @@ import {
 } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 
+type CardProps = React.ComponentProps<typeof Card>;
+
 type Feedback = {
   id: string;
   fullname: string;
   email: string;
   message: string;
 };
-
-type CardProps = React.ComponentProps<typeof Card>;
 
 const FeedbackShowcase = ({ className, ...props }: CardProps) => {
   const [feedback, setFeedback] = useState<Feedback[]>([]);

@@ -1,5 +1,7 @@
 "use client";
 
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useUser } from "@clerk/nextjs";
 import { useState } from "react";
 
@@ -30,36 +32,41 @@ const Feedback = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full bg-cyan-500">
+    <div className="flex flex-col  justify-center items-center w-full bg-white text-black">
+      <h1 className="font-bold mt-10 text-6xl text-center uppercase tracking-wide">
+        Share your thoughts
+      </h1>
       <form
         onSubmit={handleSubmit}
         className="flex justify-start items-start flex-col lg:gap-y-6 lg:p-8"
       >
-        <input type="text" value={user.user?.id as string} hidden />
-        <input
+        <Input
+          type="text"
+          className="hidden"
+          value={user.user?.id as string}
+          hidden
+        />
+        <Input
           type="text"
           placeholder={user.user?.fullName as string}
           value={user.user?.fullName as string}
           disabled
           readOnly
-          className="pr-8 pl-2 py-2 rounded-lg shadow-md placeholder:text-black bg-cyan-100/25 text-black"
         />
-        <input
+        <Input
           type="text"
           placeholder={user.user?.emailAddresses[0].emailAddress as string}
           value={user.user?.emailAddresses[0].emailAddress as string}
           disabled
           readOnly
-          className="pr-8 pl-2 py-2 rounded-lg shadow-md placeholder:text-black bg-cyan-100/25 text-black"
         />
-        <textarea
+        <Textarea
           cols={25}
           rows={6}
-          className="pr-8 pl-2 py-2 rounded-lg shadow-md placeholder:text-black text-black bg-cyan-100/25 border-2 border-black ring-1 ring-black"
           placeholder="You message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
+        ></Textarea>
         <div className="flex justify-center items-center w-full">
           <button
             type="submit"
