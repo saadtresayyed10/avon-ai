@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { GoogleGenerativeAIStream, StreamingTextResponse } from "ai";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const reqBody = await req.json();
   const prompt = reqBody.data.prompt;
 

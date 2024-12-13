@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   return new Response(JSON.stringify(result), { status: 201 });
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   const feedbacks = await prisma.feedback.findMany();
   return Response.json(feedbacks);
 }
