@@ -5,6 +5,7 @@ import { SignedIn } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

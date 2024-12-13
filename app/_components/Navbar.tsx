@@ -85,15 +85,40 @@ const Navbar = () => {
 
 export const NavbarPhone = () => {
   return (
-    <div className="flex justify-between items-center px-10 py-4 lg:hidden w-full bg-white text-black">
+    <motion.div
+      initial={{ x: -20, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
+      className="flex justify-between items-center px-10 py-4 lg:hidden w-full bg-white text-black"
+    >
       <Link href="/">
-        <h1 className="font-bold uppercase lg:text-4xl text-3xl">Avon</h1>
+        <motion.h1
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
+          className="font-bold uppercase lg:text-4xl text-3xl"
+        >
+          Avon
+        </motion.h1>
       </Link>
       <div className="flex items-center gap-x-3">
-        <UserButton />
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
         <MobileMenu />
+        <SignedOut>
+          <SignInButton mode="modal">
+            <motion.button
+              initial={{ x: 20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: 0.4 }}
+            >
+              <User2 className="w-6 h-6" />
+            </motion.button>
+          </SignInButton>
+        </SignedOut>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
