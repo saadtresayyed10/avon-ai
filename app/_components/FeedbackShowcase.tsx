@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { BellRing, Heart } from "lucide-react";
-
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -36,9 +36,14 @@ const FeedbackShowcase = ({ className, ...props }: CardProps) => {
 
   return (
     <div className="flex justify-center items-center flex-col w-full mt-10">
-      <h1 className="lg:text-6xl text-4xl font-bold uppercase tracking-wide text-center">
+      <motion.h1
+        initial={{ y: 40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 2.0, ease: "easeOut", delay: 2.0 }}
+        className="lg:text-6xl text-4xl font-bold uppercase tracking-wide text-center"
+      >
         Feedbacks
-      </h1>
+      </motion.h1>
       <div
         id="thoughts"
         className="grid lg:grid-cols-3 grid-cols-1 gap-4 p-10 lg:gap-6"
