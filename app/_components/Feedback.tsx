@@ -50,12 +50,12 @@ const Feedback = () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full bg-white text-black min-h-screen gap-y-10">
-      <h1 className="font-bold mt-10 text-6xl text-center uppercase tracking-wide">
+      <h1 className="font-bold mt-10 lg:text-6xl text-4xl text-center uppercase tracking-wide">
         Share your thoughts
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="flex justify-start items-start flex-col lg:gap-y-6 lg:p-8 border-2 border-black rounded-lg"
+        className="flex justify-start items-start flex-col lg:gap-y-6 gap-y-4 p-6 lg:p-8 border-2 border-black rounded-lg"
       >
         <Input
           type="text"
@@ -97,14 +97,14 @@ const Feedback = () => {
         ></Textarea>
         <div className="flex justify-center items-center w-full">
           {isLoading ? (
-            <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
+            <button className="text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
               Please Wait
               <span>
                 <Loader2 className="w-4 h-4 animate-spin" />
               </span>
             </button>
           ) : (
-            <button className="lg:text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
+            <button className="text-sm bg-neutral-900 px-6 py-2 rounded-md shadow text-white font-semibold uppercase flex items-center gap-x-2 hover:bg-white hover:text-black hover:gap-x-4 duration-300 border-black border-2">
               Submit
               <span>
                 <ArrowRight className="w-4 h-4" />
